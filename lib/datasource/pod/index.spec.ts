@@ -82,7 +82,7 @@ describe('datasource/cocoapods', () => {
           ...config,
           registryUrls: ['https://cdn.cocoapods.org'],
         })
-      ).rejects.toThrowError('registry-failure');
+      ).rejects.toThrow('registry-failure');
     });
     it('throws for 5xx', async () => {
       api.get.mockImplementationOnce(() =>
@@ -95,7 +95,7 @@ describe('datasource/cocoapods', () => {
           ...config,
           registryUrls: ['https://cdn.cocoapods.org'],
         })
-      ).rejects.toThrowError('registry-failure');
+      ).rejects.toThrow('registry-failure');
     });
     it('returns null for unknown error', async () => {
       api.get.mockImplementationOnce(() => {

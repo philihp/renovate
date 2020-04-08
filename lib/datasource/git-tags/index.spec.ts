@@ -22,7 +22,7 @@ describe('datasource/git-tags', () => {
         },
       });
       const versions = await getReleases({ lookupName });
-      expect(versions).toEqual(null);
+      expect(versions).toBeNull();
     });
     it('returns nil if remote call throws exception', async () => {
       simpleGit.mockReturnValue({
@@ -31,7 +31,7 @@ describe('datasource/git-tags', () => {
         },
       });
       const versions = await getReleases({ lookupName });
-      expect(versions).toEqual(null);
+      expect(versions).toBeNull();
     });
     it('returns versions filtered from tags', async () => {
       simpleGit.mockReturnValue({
