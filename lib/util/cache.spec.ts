@@ -6,6 +6,6 @@ describe('getRepoCache', () => {
     expect(getRepoCached('key')).toEqual('value');
   });
   it('clears repo cache', () => {
-    clearRepoCache();
+    expect(() => clearRepoCache()).not.toThrow();
   });
 });
